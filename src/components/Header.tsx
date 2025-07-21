@@ -88,7 +88,7 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-2 lg:space-x-3 flex-shrink-0">
             <div className="hidden sm:flex items-center space-x-2">
               <a 
-                href="https://github.com" 
+                href="https://github.com/Raghul-M" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-[var(--transition-fast)] interactive-lift p-2 rounded-full hover:bg-accent/50"
@@ -97,7 +97,7 @@ const Header = () => {
                 <Github size={18} />
               </a>
               <a 
-                href="https://twitter.com" 
+                href="https://x.com/RaghulM01" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-[var(--transition-fast)] interactive-lift p-2 rounded-full hover:bg-accent/50"
@@ -106,22 +106,13 @@ const Header = () => {
                 <Twitter size={18} />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/m-raghul/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-[var(--transition-fast)] interactive-lift p-2 rounded-full hover:bg-accent/50"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={18} />
-              </a>
-              <a 
-                href="https://discord.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-[var(--transition-fast)] interactive-lift p-2 rounded-full hover:bg-accent/50"
-                aria-label="Discord"
-              >
-                <MessageCircle size={18} />
               </a>
             </div>
             
@@ -130,9 +121,14 @@ const Header = () => {
             
             {/* CTA Button */}
             <div className="hidden lg:block">
-              <Link to="/community" className="btn-primary text-sm px-6 py-3 relative z-10">
+              <a 
+                href="https://chat.whatsapp.com/E3wsUd8dY4d7ppDDFZfVr7?mode=r_c" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn-primary text-sm px-6 py-3 relative z-10 no-underline"
+              >
                 Join Community
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -170,9 +166,9 @@ const Header = () => {
                 {/* Social Links */}
                 <div className="border-t border-border pt-6">
                   <h3 className="text-foreground font-semibold mb-4 px-4">Connect with us</h3>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <a 
-                      href="https://github.com" 
+                      href="https://github.com/Raghul-M" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-[var(--transition-fast)] p-4 rounded-lg hover:bg-accent/30"
@@ -182,7 +178,7 @@ const Header = () => {
                       <span>GitHub</span>
                     </a>
                     <a 
-                      href="https://twitter.com" 
+                      href="https://x.com/RaghulM01" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-[var(--transition-fast)] p-4 rounded-lg hover:bg-accent/30"
@@ -192,7 +188,7 @@ const Header = () => {
                       <span>Twitter</span>
                     </a>
                     <a 
-                      href="https://linkedin.com" 
+                      href="https://www.linkedin.com/in/m-raghul/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-[var(--transition-fast)] p-4 rounded-lg hover:bg-accent/30"
@@ -201,28 +197,20 @@ const Header = () => {
                       <Linkedin size={20} />
                       <span>LinkedIn</span>
                     </a>
-                    <a 
-                      href="https://discord.com" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-[var(--transition-fast)] p-4 rounded-lg hover:bg-accent/30"
-                      aria-label="Discord"
-                    >
-                      <MessageCircle size={20} />
-                      <span>Discord</span>
-                    </a>
                   </div>
                 </div>
 
                 {/* CTA Button */}
                 <div className="border-t border-border pt-6">
-                  <Link 
-                    to="/community" 
+                  <a 
+                    href="https://chat.whatsapp.com/E3wsUd8dY4d7ppDDFZfVr7?mode=r_c" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
                     onClick={toggleMobileMenu}
-                    className="btn-primary text-center block text-base px-6 py-4"
+                    className="btn-primary text-center block text-base px-6 py-4 no-underline"
                   >
                     Join Community
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

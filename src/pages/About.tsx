@@ -72,7 +72,7 @@ const About = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8 max-w-6xl mx-auto">
               <a 
-                href="https://github.com" 
+                href="https://github.com/Raghul-M" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="glass-card group text-center animate-fade-in hover:scale-105 transition-[var(--transition-smooth)] p-4"
@@ -85,7 +85,7 @@ const About = () => {
               </a>
 
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/m-raghul/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="glass-card group text-center animate-fade-in hover:scale-105 transition-[var(--transition-smooth)] p-4"
@@ -98,7 +98,7 @@ const About = () => {
               </a>
 
               <a 
-                href="https://twitter.com" 
+                href="https://x.com/RaghulM01" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="glass-card group text-center animate-fade-in hover:scale-105 transition-[var(--transition-smooth)] p-4"

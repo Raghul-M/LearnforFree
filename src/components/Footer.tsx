@@ -17,7 +17,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-4">
               <a 
-                href="https://github.com" 
+                href="https://github.com/Raghul-M" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
@@ -26,7 +26,7 @@ const Footer = () => {
                 <Github size={18} />
               </a>
               <a 
-                href="https://twitter.com" 
+                href="https://x.com/RaghulM01" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
@@ -35,22 +35,13 @@ const Footer = () => {
                 <Twitter size={18} />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/m-raghul/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={18} />
-              </a>
-              <a 
-                href="https://discord.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
-                aria-label="Discord"
-              >
-                <MessageCircle size={18} />
               </a>
             </div>
           </div>

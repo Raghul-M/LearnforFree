@@ -1,4 +1,6 @@
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, PlayCircle } from "lucide-react";
+import { useState } from "react";
+import ToolModal from "./ToolModal";
 
 interface ToolCardProps {
   name: string;
@@ -14,8 +16,16 @@ const ToolCard: React.FC<ToolCardProps> = ({
   description,
   url,
   logo,
+  category,
   pricing = "FREE"
 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleTryClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsModalOpen(true);
+  };
   return (
     <div className="tool-card-new animate-fade-in group">
             {/* Logo Container - Transparent */}
@@ -48,17 +58,25 @@ const ToolCard: React.FC<ToolCardProps> = ({
 
         {/* Action Button */}
         <div className="pt-2">
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-tool w-full flex items-center justify-center gap-2 no-underline relative z-10"
+          <button
+            onClick={handleTryClick}
+            className="btn-tool w-full flex items-center justify-center gap-2 relative z-10"
           >
             <span className="text-sm">Try Now</span>
-            <ExternalLink size={14} />
-          </a>
+            <PlayCircle size={14} />
+          </button>
         </div>
       </div>
+
+      {/* Modal - Rendered via Portal */}
+      {isModalOpen && (
+        <ToolModal
+          key={`modal-${name}`}
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          tool={{ name, description, url, logo, category, pricing }}
+        />
+      )}
     </div>
   );
 };

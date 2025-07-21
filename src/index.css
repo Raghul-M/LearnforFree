@@ -261,19 +261,88 @@
   }
 
   .btn-tool {
-    @apply bg-transparent text-black border border-[var(--border-light)] px-4 py-3 rounded-lg
-           hover:scale-105 hover:bg-[var(--accent-hover)] hover:shadow-[var(--shadow-md)] active:scale-95 
-           transition-[var(--transition-spring)] font-semibold relative overflow-hidden
-           text-sm;
+    @apply bg-primary/20 text-black border border-primary px-4 py-2 rounded-lg
+           hover:scale-105 hover:bg-primary/30 hover:shadow-[var(--shadow-md)] active:scale-95 
+           transition-[var(--transition-spring)] font-medium relative overflow-hidden;
   }
 
   .btn-tool::before {
     content: '';
-    @apply absolute inset-0 opacity-0 transition-[var(--transition-smooth)];
+    @apply absolute inset-0 bg-[var(--gradient-primary-glow)] opacity-0 
+           hover:opacity-100 transition-[var(--transition-smooth)];
   }
 
   .hero-gradient {
     @apply bg-[var(--gradient-hero)] relative overflow-hidden;
+  }
+
+  /* Modal specific styles */
+  #modal-root {
+    position: relative;
+    z-index: 10000;
+  }
+
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  .modal-content {
+    background: #ffffff;
+    background: hsl(var(--background));
+    border: 1px solid #e5e7eb;
+    border: 1px solid hsl(var(--border));
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+    max-width: 42rem;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    z-index: 10002;
+    animation: modalSlideIn 0.3s ease-out;
+  }
+
+  /* Dark mode support for modal */
+  @media (prefers-color-scheme: dark) {
+    .modal-content {
+      background: #1f2937;
+      border: 1px solid #374151;
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes modalSlideIn {
+    from { 
+      opacity: 0;
+      transform: scale(0.95) translateY(-10px); 
+    }
+    to { 
+      opacity: 1;
+      transform: scale(1) translateY(0); 
+    }
+  }
+
+  /* Prevent page scroll when modal is open */
+  body.modal-open {
+    overflow: hidden;
+    padding-right: 0;
   }
 
   .hero-gradient::before {

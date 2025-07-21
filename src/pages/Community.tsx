@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { MessageCircle, Users, BookOpen, Lightbulb, Github, Twitter } from "lucide-react";
+import { MessageCircle, Users, BookOpen, Lightbulb, Github, Twitter, Phone } from "lucide-react";
 
 const Community = () => {
   return (
@@ -20,14 +20,24 @@ const Community = () => {
                 and grow together in our supportive learning community.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <button className="btn-primary flex items-center justify-center gap-2">
-                  <MessageCircle size={20} />
-                  Join Discord
-                </button>
-                <button className="btn-secondary flex items-center justify-center gap-2">
+                <a 
+                  href="https://chat.whatsapp.com/E3wsUd8dY4d7ppDDFZfVr7?mode=r_c" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn-primary flex items-center justify-center gap-2 no-underline"
+                >
+                  <Phone size={20} />
+                  Join WhatsApp Community
+                </a>
+                <a 
+                  href="https://github.com/Raghul-M" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn-secondary flex items-center justify-center gap-2 no-underline"
+                >
                   <Github size={20} />
                   Contribute on GitHub
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -102,22 +112,6 @@ const Community = () => {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-card border border-border rounded-lg p-8 text-center space-y-4 hover:shadow-[var(--shadow-medium)] transition-[var(--transition-smooth)]">
-                <div className="w-16 h-16 bg-[#5865F2] rounded-full flex items-center justify-center mx-auto">
-                  <MessageCircle className="text-white" size={24} />
-                </div>
-                <h3 className="text-xl font-bold text-foreground">Discord Server</h3>
-                <p className="text-muted-foreground">
-                  Join our active Discord community for real-time discussions, study groups, and resource sharing.
-                </p>
-                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                  <Users size={16} />
-                  <span>5,000+ members</span>
-                </div>
-                <button className="btn-primary w-full">
-                  Join Discord
-                </button>
-              </div>
 
               <div className="bg-card border border-border rounded-lg p-8 text-center space-y-4 hover:shadow-[var(--shadow-medium)] transition-[var(--transition-smooth)]">
                 <div className="w-16 h-16 bg-[#333] rounded-full flex items-center justify-center mx-auto">
@@ -149,6 +143,28 @@ const Community = () => {
                 <button className="btn-secondary w-full">
                   Follow Us
                 </button>
+              </div>
+
+              <div className="bg-card border border-border rounded-lg p-8 text-center space-y-4 hover:shadow-[var(--shadow-medium)] transition-[var(--transition-smooth)]">
+                <div className="w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center mx-auto">
+                  <Phone className="text-white" size={24} />
+                </div>
+                <h3 className="text-xl font-bold text-foreground">WhatsApp Community</h3>
+                <p className="text-muted-foreground">
+                  Join our WhatsApp community for instant updates, quick help, and mobile-friendly discussions.
+                </p>
+                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                  <Users size={16} />
+                  <span>Active community</span>
+                </div>
+                <a 
+                  href="https://chat.whatsapp.com/E3wsUd8dY4d7ppDDFZfVr7?mode=r_c" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn-primary w-full block text-center no-underline"
+                >
+                  Join WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -233,10 +249,15 @@ const Community = () => {
                 Become part of a community that believes in the power of free education and collaborative learning.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <button className="btn-primary flex items-center justify-center gap-2">
-                  <MessageCircle size={20} />
-                  Join Our Discord
-                </button>
+                <a 
+                  href="https://chat.whatsapp.com/E3wsUd8dY4d7ppDDFZfVr7?mode=r_c" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn-primary flex items-center justify-center gap-2 no-underline"
+                >
+                  <Phone size={20} />
+                  Join WhatsApp Community
+                </a>
                 <a href="/" className="btn-secondary no-underline">
                   Browse Resources
                 </a>
