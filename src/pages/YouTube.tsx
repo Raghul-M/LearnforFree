@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Play, Users, Star, Code, Brain, Cloud, Globe, Smartphone, Bookmark, Flame, Zap, Target, Gem, Sparkles, BookOpen } from "lucide-react";
+import { Play, Users, Star, Code, Brain, Cloud, Globe, Smartphone, Bookmark, Flame, Zap, Target, Gem, Sparkles, BookOpen, ChevronDown } from "lucide-react";
 import youtubeImage from "@/assets/youtube.svg";
 
 interface YouTubeChannel {
@@ -19,6 +19,7 @@ interface YouTubeChannel {
 const YouTube = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [activeSubcategory, setActiveSubcategory] = useState("all");
+  const [isSubcategoryDropdownOpen, setIsSubcategoryDropdownOpen] = useState(false);
 
   const channels: YouTubeChannel[] = [
     // Web Development
@@ -441,7 +442,40 @@ const YouTube = () => {
   const handleCategoryChange = (categoryId: string) => {
     setActiveCategory(categoryId);
     setActiveSubcategory("all");
+    setIsSubcategoryDropdownOpen(false);
   };
+
+  // Handle subcategory selection
+  const handleSubcategoryChange = (subcategoryId: string) => {
+    setActiveSubcategory(subcategoryId);
+    setIsSubcategoryDropdownOpen(false);
+  };
+
+  // Get current subcategory name for dropdown display
+  const getCurrentSubcategoryName = () => {
+    const current = subcategories.find(sub => sub.id === activeSubcategory);
+    return current ? current.name : "All Dev";
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent | TouchEvent) => {
+      const target = e.target as Element;
+      if (!target.closest('.subcategory-dropdown') && isSubcategoryDropdownOpen) {
+        setIsSubcategoryDropdownOpen(false);
+      }
+    };
+
+    if (isSubcategoryDropdownOpen) {
+      document.addEventListener('click', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isSubcategoryDropdownOpen]);
 
   return (
     <div className="min-h-screen bg-[var(--gradient-surface)]">
@@ -615,21 +649,68 @@ const YouTube = () => {
               ))}
             </div>
 
-            {/* Subcategory Tabs */}
+            {/* Subcategory Tabs - Desktop */}
             {activeCategory === "developers" && (
-              <div className="flex flex-wrap justify-center gap-4 mb-12">
+              <div className="hidden md:flex flex-wrap justify-center gap-4 mb-12">
                 {subcategories.map((subcategory) => (
                   <button
                     key={subcategory.id}
-                    onClick={() => setActiveSubcategory(subcategory.id)}
+                    onClick={() => handleSubcategoryChange(subcategory.id)}
                     className={`youtube-category-tab ${
                       activeSubcategory === subcategory.id ? "active" : ""
                     }`}
-                                      >
-                      <span className="mr-2">{subcategory.icon}</span>
-                      {subcategory.name}
-                    </button>
+                  >
+                    <span className="mr-2">{subcategory.icon}</span>
+                    {subcategory.name}
+                  </button>
                 ))}
+              </div>
+            )}
+
+            {/* Subcategory Dropdown - Mobile */}
+            {activeCategory === "developers" && (
+              <div className="md:hidden mb-12 flex justify-center">
+                <div className="relative subcategory-dropdown">
+                  <button
+                    onClick={() => setIsSubcategoryDropdownOpen(!isSubcategoryDropdownOpen)}
+                    onTouchStart={(e) => { e.preventDefault(); }}
+                    className="youtube-category-tab active flex items-center gap-2 min-w-[200px] justify-between touch-manipulation"
+                    type="button"
+                  >
+                    <div className="flex items-center">
+                      <span className="mr-2">
+                        {subcategories.find(sub => sub.id === activeSubcategory)?.icon}
+                      </span>
+                      {getCurrentSubcategoryName()}
+                    </div>
+                    <ChevronDown 
+                      size={16} 
+                      className={`transition-transform duration-200 ${
+                        isSubcategoryDropdownOpen ? 'rotate-180' : ''
+                      }`} 
+                    />
+                  </button>
+
+                  {/* Dropdown Menu */}
+                  {isSubcategoryDropdownOpen && (
+                    <div className="absolute top-full mt-2 left-0 right-0 bg-background border border-border rounded-lg shadow-lg z-50 overflow-hidden animate-fade-in">
+                      {subcategories.map((subcategory) => (
+                        <button
+                          key={subcategory.id}
+                          onClick={() => handleSubcategoryChange(subcategory.id)}
+                          onTouchStart={(e) => { e.preventDefault(); }}
+                          className={`w-full text-left px-4 py-3 hover:bg-accent/30 transition-colors flex items-center gap-3 touch-manipulation ${
+                            activeSubcategory === subcategory.id ? 'bg-primary/10 text-primary' : 'text-foreground'
+                          }`}
+                          type="button"
+                        >
+                          <span>{subcategory.icon}</span>
+                          {subcategory.name}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             )}
 

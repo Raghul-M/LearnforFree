@@ -258,6 +258,26 @@ const ToolModal: React.FC<ToolModalProps> = ({ isOpen, onClose, tool }) => {
           "Curated resources for each topic",
           "Community-driven content"
         ]
+      },
+      "Hugging Face Learn": {
+        steps: [
+          "Go to huggingface.co/learn",
+          "Browse the course catalog",
+          "Start with 'NLP Course' for beginners",
+          "Follow interactive tutorials and notebooks",
+          "Practice with real datasets and models",
+          "Join the Hugging Face community forums"
+        ],
+        tips: [
+          "All courses are completely free",
+          "Use Google Colab for hands-on practice",
+          "Join the Discord community for help"
+        ],
+        benefits: [
+          "Learn cutting-edge AI and NLP techniques",
+          "Access to state-of-the-art models",
+          "Interactive coding tutorials"
+        ]
       }
     };
 

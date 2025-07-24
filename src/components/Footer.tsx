@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
-import { Github, Twitter, Linkedin, MessageCircle, Mail, Heart } from "lucide-react";
+import { Github, Twitter, Linkedin, Mail, Heart } from "lucide-react";
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   return (
     <footer className="bg-black text-white py-16 px-6">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <Link to="/" className="text-3xl font-bold text-primary mb-4 block hover:text-primary/80 transition-colors">
+            <Link to="/" onClick={scrollToTop} className="text-3xl font-bold text-primary mb-4 block hover:text-primary/80 transition-colors">
               Learnforfree.
             </Link>
             <p className="text-gray-400 text-lg leading-relaxed mb-6 max-w-md">
@@ -51,29 +54,29 @@ const Footer = () => {
             <h4 className="text-primary font-semibold text-lg mb-6">Quick Links</h4>
             <ul className="space-y-4">
               <li>
-                <Link to="/" className="text-gray-400 hover:text-primary transition-colors">
+                <Link to="/" onClick={scrollToTop} className="text-gray-400 hover:text-primary transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-400 hover:text-primary transition-colors">
+                <Link to="/about" onClick={scrollToTop} className="text-gray-400 hover:text-primary transition-colors">
                   About
                 </Link>
               </li>
               <li>
-                <Link to="/youtube" className="text-gray-400 hover:text-primary transition-colors">
+                <Link to="/youtube" onClick={scrollToTop} className="text-gray-400 hover:text-primary transition-colors">
                   YouTube
                 </Link>
               </li>
               <li>
-                <Link to="/community" className="text-gray-400 hover:text-primary transition-colors">
+                <Link to="/community" onClick={scrollToTop} className="text-gray-400 hover:text-primary transition-colors">
                   Community
                 </Link>
               </li>
               <li>
-                <a href="#tools" className="text-gray-400 hover:text-primary transition-colors">
+                <Link to="/#tools" onClick={scrollToTop} className="text-gray-400 hover:text-primary transition-colors">
                   Tools
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -83,24 +86,24 @@ const Footer = () => {
             <h4 className="text-primary font-semibold text-lg mb-6">Categories</h4>
             <ul className="space-y-4">
               <li>
-                <a href="#developers" className="text-gray-400 hover:text-primary transition-colors">
-                  Developers
-                </a>
+                <Link to="/youtube" onClick={scrollToTop} className="text-gray-400 hover:text-primary transition-colors">
+                  Tech Channels
+                </Link>
               </li>
               <li>
-                <a href="#students" className="text-gray-400 hover:text-primary transition-colors">
-                  Students
-                </a>
+                <Link to="/youtube" onClick={scrollToTop} className="text-gray-400 hover:text-primary transition-colors">
+                  Student Resources
+                </Link>
               </li>
               <li>
-                <a href="#entrepreneurship" className="text-gray-400 hover:text-primary transition-colors">
+                <Link to="/youtube" onClick={scrollToTop} className="text-gray-400 hover:text-primary transition-colors">
                   Entrepreneurship
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#soft-skills" className="text-gray-400 hover:text-primary transition-colors">
+                <Link to="/youtube" onClick={scrollToTop} className="text-gray-400 hover:text-primary transition-colors">
                   Soft Skills
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -120,10 +123,15 @@ const Footer = () => {
                   type="email"
                   placeholder="Enter your email"
                   className="w-full bg-gray-800 border border-gray-700 rounded-lg pl-11 pr-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-gray-600"
+                  disabled
                 />
               </div>
-              <button className="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
-                Subscribe
+              <button 
+                className="bg-gray-600 text-gray-400 px-6 py-3 rounded-lg font-semibold cursor-not-allowed"
+                disabled
+                title="Newsletter coming soon!"
+              >
+                Coming Soon
               </button>
             </div>
           </div>
@@ -141,12 +149,17 @@ const Footer = () => {
               <span>for learners worldwide</span>
             </div>
             <div className="flex gap-6 text-sm">
-              <a href="#privacy" className="text-gray-400 hover:text-primary transition-colors">
-                Privacy Policy
+              <a 
+                href="https://chat.whatsapp.com/E3wsUd8dY4d7ppDDFZfVr7?mode=r_c" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-primary transition-colors"
+              >
+                Contact Us
               </a>
-              <a href="#terms" className="text-gray-400 hover:text-primary transition-colors">
-                Terms of Service
-              </a>
+              <Link to="/community" onClick={scrollToTop} className="text-gray-400 hover:text-primary transition-colors">
+                Support
+              </Link>
             </div>
           </div>
         </div>

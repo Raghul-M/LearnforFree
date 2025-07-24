@@ -9,6 +9,12 @@ const Header = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const handleMobileMenuToggle = (e: React.MouseEvent | React.TouchEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleMobileMenu();
+  };
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -21,9 +27,9 @@ const Header = () => {
       }
     };
 
-    const handleClickOutside = (e: MouseEvent) => {
+    const handleClickOutside = (e: MouseEvent | TouchEvent) => {
       const target = e.target as Element;
-      if (!target.closest('.mobile-menu-container') && !target.closest('button[aria-label="Toggle mobile menu"]')) {
+      if (!target.closest('.mobile-menu-container') && !target.closest('.mobile-menu-button')) {
         setIsMobileMenuOpen(false);
       }
     };
@@ -31,12 +37,14 @@ const Header = () => {
     if (isMobileMenuOpen) {
       document.addEventListener('keydown', handleEscape);
       document.addEventListener('click', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
       document.body.style.overflow = 'hidden'; // Prevent background scrolling
     }
 
     return () => {
       document.removeEventListener('keydown', handleEscape);
       document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
       document.body.style.overflow = 'unset';
     };
   }, [isMobileMenuOpen]);
@@ -90,9 +98,11 @@ const Header = () => {
           {/* Mobile menu button - Right corner */}
           <div className="md:hidden">
             <button 
-              onClick={toggleMobileMenu}
-              className="text-foreground hover:text-primary transition-[var(--transition-fast)] interactive-lift p-3 rounded-full hover:bg-accent/50"
+              onClick={handleMobileMenuToggle}
+              onTouchStart={handleMobileMenuToggle}
+              className="mobile-menu-button text-foreground hover:text-primary transition-[var(--transition-fast)] p-4 rounded-full hover:bg-accent/50 relative z-[60] min-w-[48px] min-h-[48px] flex items-center justify-center touch-manipulation"
               aria-label="Toggle mobile menu"
+              type="button"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -149,7 +159,7 @@ const Header = () => {
 
         {/* Mobile Menu Dropdown */}
         {isMobileMenuOpen && (
-          <div className="md:hidden fixed top-[88px] left-0 right-0 bg-background/95 backdrop-blur-lg border-b border-border shadow-lg z-[9999] animate-fade-in mobile-menu-container">
+          <div className="md:hidden fixed top-[88px] left-0 right-0 bg-background/95 backdrop-blur-lg border-b border-border shadow-lg z-[10000] animate-fade-in mobile-menu-container">
             <div className="container mx-auto px-6 py-6">
               <div className="space-y-6">
                 {/* Navigation Links */}

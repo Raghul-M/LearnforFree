@@ -388,6 +388,32 @@
     -webkit-backdrop-filter: none;
   }
 
+  /* Mobile menu button improvements */
+  .mobile-menu-button {
+    pointer-events: auto !important;
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .mobile-menu-container {
+    pointer-events: auto !important;
+    overscroll-behavior: contain;
+  }
+
+  /* Subcategory dropdown mobile styles */
+  .subcategory-dropdown {
+    touch-action: manipulation;
+  }
+
+  .subcategory-dropdown button {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
   /* Modern interaction utilities */
   .interactive-lift {
     @apply transition-[var(--transition-smooth)] hover:scale-105 hover:-translate-y-1 

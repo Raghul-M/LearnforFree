@@ -17,6 +17,7 @@ import geminiLogo from "@/assets/logos/gemini.png";
 import freecodecampLogo from "@/assets/logos/freecodecamp.png";
 import deeplearningaiLogo from "@/assets/logos/deeplearningai.png";
 import roadmapshLogo from "@/assets/logos/roadmapsh.png";
+import huggingfaceLogo from "@/assets/logos/huggingface.png";
 
 // Import why-choose-us images
 import verifiedQualityImg from "@/assets/why-choose-us/Verified.svg";
@@ -91,6 +92,14 @@ const Index = () => {
       url: "https://www.freecodecamp.org",
       logo: freecodecampLogo,
       category: "developers",
+      pricing: "FREE" as const
+    },
+    {
+      name: "Hugging Face Learn",
+      description: "Open-source machine learning platform with courses, models, and datasets for AI education",
+      url: "https://huggingface.co/learn",
+      logo: huggingfaceLogo,
+      category: "students",
       pricing: "FREE" as const
     }
     ];
