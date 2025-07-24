@@ -345,6 +345,20 @@
     padding-right: 0;
   }
 
+  /* YouTube Page Styles */
+  .youtube-category-tab {
+    @apply px-5 py-2.5 rounded-full border border-[var(--border-light)] 
+           bg-[var(--gradient-surface)] backdrop-blur-[var(--blur-sm)]
+           hover:bg-[var(--accent-hover)] hover:border-primary/30 hover:shadow-[var(--shadow-sm)]
+           transition-[var(--transition-smooth)] text-black hover:text-black 
+           font-medium cursor-pointer text-sm flex items-center;
+  }
+
+  .youtube-category-tab.active {
+    @apply bg-[var(--gradient-primary)] text-black border-primary/50
+           shadow-[var(--shadow-glow)] scale-105;
+  }
+
   .hero-gradient::before {
     content: '';
     @apply absolute inset-0 bg-[var(--gradient-primary)] opacity-[0.03] 

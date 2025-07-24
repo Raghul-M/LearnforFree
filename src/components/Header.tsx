@@ -9,6 +9,10 @@ const Header = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   // Close mobile menu when clicking outside or on escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -46,7 +50,7 @@ const Header = () => {
 
           {/* Logo */}
           <div className="flex-shrink-0 flex-1 md:flex-initial md:w-44 text-center md:text-left">
-            <Link to="/" className="text-3xl font-bold heading-modern text-primary interactive-glow">
+            <Link to="/" onClick={scrollToTop} className="text-3xl font-bold heading-modern text-primary interactive-glow">
               Learnforfree.
             </Link>
           </div>
@@ -55,18 +59,28 @@ const Header = () => {
           <nav className="hidden md:flex items-center justify-center space-x-6 lg:space-x-8 flex-1">
             <Link 
               to="/" 
+              onClick={scrollToTop}
               className="text-foreground hover:text-primary transition-[var(--transition-fast)] font-medium text-sm tracking-wide uppercase opacity-80 hover:opacity-100 px-4 py-2 rounded-lg hover:bg-accent/30"
             >
               Home
             </Link>
             <Link 
+              to="/youtube" 
+              onClick={scrollToTop}
+              className="text-foreground hover:text-primary transition-[var(--transition-fast)] font-medium text-sm tracking-wide uppercase opacity-80 hover:opacity-100 px-4 py-2 rounded-lg hover:bg-accent/30"
+            >
+              YouTube
+            </Link>
+            <Link 
               to="/about" 
+              onClick={scrollToTop}
               className="text-foreground hover:text-primary transition-[var(--transition-fast)] font-medium text-sm tracking-wide uppercase opacity-80 hover:opacity-100 px-4 py-2 rounded-lg hover:bg-accent/30"
             >
               About
             </Link>
             <Link 
               to="/community" 
+              onClick={scrollToTop}
               className="text-foreground hover:text-primary transition-[var(--transition-fast)] font-medium text-sm tracking-wide uppercase opacity-80 hover:opacity-100 px-4 py-2 rounded-lg hover:bg-accent/30"
             >
               Community
@@ -142,21 +156,28 @@ const Header = () => {
                 <nav className="space-y-4">
                   <Link 
                     to="/" 
-                    onClick={toggleMobileMenu}
+                    onClick={() => { toggleMobileMenu(); scrollToTop(); }}
                     className="block text-foreground hover:text-primary transition-[var(--transition-fast)] font-medium text-lg tracking-wide px-4 py-3 rounded-lg hover:bg-accent/30"
                   >
                     Home
                   </Link>
                   <Link 
+                    to="/youtube" 
+                    onClick={() => { toggleMobileMenu(); scrollToTop(); }}
+                    className="block text-foreground hover:text-primary transition-[var(--transition-fast)] font-medium text-lg tracking-wide px-4 py-3 rounded-lg hover:bg-accent/30"
+                  >
+                    YouTube
+                  </Link>
+                  <Link 
                     to="/about" 
-                    onClick={toggleMobileMenu}
+                    onClick={() => { toggleMobileMenu(); scrollToTop(); }}
                     className="block text-foreground hover:text-primary transition-[var(--transition-fast)] font-medium text-lg tracking-wide px-4 py-3 rounded-lg hover:bg-accent/30"
                   >
                     About
                   </Link>
                   <Link 
                     to="/community" 
-                    onClick={toggleMobileMenu}
+                    onClick={() => { toggleMobileMenu(); scrollToTop(); }}
                     className="block text-foreground hover:text-primary transition-[var(--transition-fast)] font-medium text-lg tracking-wide px-4 py-3 rounded-lg hover:bg-accent/30"
                   >
                     Community
@@ -206,7 +227,7 @@ const Header = () => {
                     href="https://chat.whatsapp.com/E3wsUd8dY4d7ppDDFZfVr7?mode=r_c" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    onClick={toggleMobileMenu}
+                    onClick={() => { toggleMobileMenu(); scrollToTop(); }}
                     className="btn-primary text-center block text-base px-6 py-4 no-underline"
                   >
                     Join Community
