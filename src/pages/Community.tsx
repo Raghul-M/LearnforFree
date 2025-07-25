@@ -43,6 +43,24 @@ const Community = () => {
           </div>
         </section>
 
+        {/* Inspirational Quote */}
+        <section className="py-8 px-4">
+          <div className="container mx-auto">
+            <div className="max-w-2xl mx-auto">
+              <div className="bg-white rounded-xl shadow-md p-4 md:p-6 text-center border border-orange-400">
+                <blockquote className="text-lg md:text-xl font-medium text-gray-800 leading-snug mb-3">
+                  Education is the most powerful weapon which you can use to change the world
+                </blockquote>
+                <div className="w-12 h-0.5 bg-primary mx-auto mb-3"></div>
+                <cite className="text-sm md:text-base text-gray-600 font-semibold not-italic">
+                  — Dr. A.P.J. Abdul Kalam
+                </cite>
+                <p className="text-xs text-gray-500 mt-1">Former President of India & Scientist</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Community Features */}
         <section className="py-16 px-4">
           <div className="container mx-auto">
