@@ -1,4 +1,4 @@
-# Learnforfree - Essential Development Tools
+# Learnforfree - Democraizing Education
 
 A modern web platform showcasing curated, free development tools and resources to accelerate your learning journey.
 
