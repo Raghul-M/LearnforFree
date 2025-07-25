@@ -7,7 +7,7 @@ const Hero = () => {
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Content */}
-          <div className="space-y-6 md:space-y-10 animate-slide-up">
+          <div className="space-y-6 md:space-y-10 animate-slide-up lg:order-1">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl heading-modern text-foreground leading-[1.2] text-balance">
                 Democratizing{" "}
@@ -54,12 +54,12 @@ const Hero = () => {
           </div>
 
           {/* Hero Image */}
-          <div className="relative animate-fade-in mt-8 lg:mt-0">
-            <div className="relative overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-[var(--shadow-xl)]">
+          <div className="relative animate-fade-in mt-8 lg:mt-0 lg:order-2">
+            <div className="relative overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-[var(--shadow-xl)] mx-auto max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-none">
               <img
                 src={heroImage}
                 alt="Social media and community learning illustration"
-                className="w-full h-auto object-contain transform hover:scale-105 transition-[var(--transition-slow)] max-w-none"
+                className="w-full h-auto object-contain transform hover:scale-105 transition-[var(--transition-slow)] max-w-none scale-110 sm:scale-125 md:scale-110 lg:scale-100"
               />
               {/* Modern overlay */}
               <div className="absolute inset-0 bg-[var(--gradient-primary)] opacity-5"></div>
