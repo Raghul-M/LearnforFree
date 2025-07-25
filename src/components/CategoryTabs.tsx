@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 interface CategoryTabsProps {
   activeCategory: string;
@@ -14,6 +15,9 @@ const categories = [
 ];
 
 const CategoryTabs: React.FC<CategoryTabsProps> = ({ activeCategory, onCategoryChange }) => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const currentCategory = categories.find(cat => cat.id === activeCategory) || categories[0];
+
   return (
     <div className="w-full mb-12">
       {/* Desktop Tabs */}
@@ -34,18 +38,48 @@ const CategoryTabs: React.FC<CategoryTabsProps> = ({ activeCategory, onCategoryC
 
       {/* Mobile Dropdown */}
       <div className="md:hidden mb-6">
-        <div className="glass-effect rounded-2xl p-1">
-          <select
-            value={activeCategory}
-            onChange={(e) => onCategoryChange(e.target.value)}
-            className="w-full p-4 bg-transparent border-0 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 text-foreground text-lg font-medium"
+        <div className="relative">
+          <button
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            className="w-full bg-white border border-gray-200 rounded-xl p-4 flex items-center justify-between shadow-sm hover:shadow-md transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
           >
-            {categories.map((category) => (
-              <option key={category.id} value={category.id} className="bg-background text-foreground">
-                {category.label} - {category.description}
-              </option>
-            ))}
-          </select>
+            <div className="text-left">
+              <div className="text-lg font-semibold text-gray-900">{currentCategory.label}</div>
+              <div className="text-sm text-gray-500">{currentCategory.description}</div>
+            </div>
+            <ChevronDown 
+              className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} 
+            />
+          </button>
+
+          {/* Dropdown Menu */}
+          {isDropdownOpen && (
+            <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-xl shadow-lg z-50 max-h-80 overflow-y-auto">
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => {
+                    onCategoryChange(category.id);
+                    setIsDropdownOpen(false);
+                  }}
+                  className={`w-full text-left p-4 hover:bg-gray-50 transition-colors duration-150 first:rounded-t-xl last:rounded-b-xl ${
+                    activeCategory === category.id ? 'bg-primary/10 text-primary border-l-4 border-primary' : 'text-gray-900'
+                  }`}
+                >
+                  <div className="font-semibold">{category.label}</div>
+                  <div className="text-sm text-gray-500 mt-1">{category.description}</div>
+                </button>
+              ))}
+            </div>
+          )}
+
+          {/* Backdrop for mobile */}
+          {isDropdownOpen && (
+            <div 
+              className="fixed inset-0 z-40"
+              onClick={() => setIsDropdownOpen(false)}
+            />
+          )}
         </div>
       </div>
     </div>
