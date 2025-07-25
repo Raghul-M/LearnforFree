@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Github, Twitter, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Twitter, Linkedin, Heart } from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -106,34 +106,6 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
-        </div>
-
-        {/* Newsletter Section */}
-        <div className="border-t border-gray-800 pt-12 mb-12">
-          <div className="max-w-md mx-auto text-center">
-            <h4 className="text-primary font-semibold text-xl mb-4">Stay Updated</h4>
-            <p className="text-gray-400 mb-6">
-              Get notified when we add new tools and resources to help accelerate your learning.
-            </p>
-            <div className="flex gap-3">
-              <div className="flex-1 relative">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="w-full bg-gray-800 border border-gray-700 rounded-lg pl-11 pr-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-gray-600"
-                  disabled
-                />
-              </div>
-              <button 
-                className="bg-gray-600 text-gray-400 px-6 py-3 rounded-lg font-semibold cursor-not-allowed"
-                disabled
-                title="Newsletter coming soon!"
-              >
-                Coming Soon
-              </button>
-            </div>
           </div>
         </div>
 
