@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import CategoryTabs from "@/components/CategoryTabs";
 import ToolCard from "@/components/ToolCard";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Target, BarChart3, Award } from "lucide-react";
 
 // Import logos
@@ -27,6 +28,30 @@ import communityDrivenImg from "@/assets/why-choose-us/community.svg";
 const Index = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [showMoreResources, setShowMoreResources] = useState(false);
+
+  const homeStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "LearnForFree",
+    "alternateName": "Learn For Free",
+    "url": "https://learnforfree.vercel.app",
+    "description": "Democratizing free quality education for all. Access 500+ verified free educational resources, development tools, and courses for students, developers, and lifelong learners.",
+    "mainEntity": {
+      "@type": "EducationalOrganization",
+      "name": "LearnForFree",
+      "description": "Platform providing curated free educational resources and development tools",
+      "url": "https://learnforfree.vercel.app",
+      "sameAs": [
+        "https://github.com/learnforfree",
+        "https://twitter.com/learnforfree"
+      ]
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://learnforfree.vercel.app/?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
 
   // Tool data with logos
   const tools = [
@@ -93,7 +118,11 @@ const Index = () => {
       logo: freecodecampLogo,
       category: "developers",
       pricing: "FREE" as const
-    },
+    }
+    ];
+
+  // Additional tools that show when "Load More Resources" is clicked
+  const additionalTools = [
     {
       name: "Hugging Face Learn",
       description: "Open-source machine learning platform with courses, models, and datasets for AI education",
@@ -101,11 +130,7 @@ const Index = () => {
       logo: huggingfaceLogo,
       category: "students",
       pricing: "FREE" as const
-    }
-    ];
-
-  // Additional tools that show when "Load More Resources" is clicked
-  const additionalTools = [
+    },
     {
       name: "DeepLearning.AI",
       description: "Learn AI and machine learning from Andrew Ng with hands-on courses and specializations",
@@ -134,6 +159,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-[var(--gradient-surface)]">
+      <SEOHead 
+        structuredData={homeStructuredData}
+      />
       <Header />
       
       <main>

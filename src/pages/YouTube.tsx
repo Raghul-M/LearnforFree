@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Play, Users, Star, Code, Brain, Cloud, Globe, Smartphone, Bookmark, Flame, Zap, Target, Gem, Sparkles, BookOpen, ChevronDown } from "lucide-react";
 import youtubeImage from "@/assets/youtube.svg";
 
@@ -17,6 +18,19 @@ interface YouTubeChannel {
 }
 
 const YouTube = () => {
+  const youtubeStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Free YouTube Learning Channels",
+    "description": "Curated collection of the best free educational YouTube channels for coding, web development, data science, entrepreneurship, and more.",
+    "url": "https://learnforfree.vercel.app/youtube",
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "Educational YouTube Channels",
+      "description": "Hand-picked YouTube channels offering free, high-quality educational content",
+      "numberOfItems": "40+"
+    }
+  };
   const [activeCategory, setActiveCategory] = useState("all");
   const [activeSubcategory, setActiveSubcategory] = useState("all");
   const [isSubcategoryDropdownOpen, setIsSubcategoryDropdownOpen] = useState(false);
@@ -479,6 +493,13 @@ const YouTube = () => {
 
   return (
     <div className="min-h-screen bg-[var(--gradient-surface)]">
+      <SEOHead 
+        title="Free YouTube Learning Channels | Best Educational Content - LearnForFree"
+        description="Discover 40+ hand-picked YouTube channels offering free, high-quality educational content. From coding tutorials to entrepreneurship guides, find the best learning channels curated for students and professionals."
+        keywords="youtube learning channels, free youtube courses, coding youtube channels, programming tutorials youtube, educational youtube channels, free online learning, youtube education, learn coding youtube, web development youtube, data science youtube"
+        url="https://learnforfree.vercel.app/youtube"
+        structuredData={youtubeStructuredData}
+      />
       <Header />
       
       <main>

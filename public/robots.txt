@@ -1,14 +1,43 @@
-User-agent: Googlebot
+# LearnForFree Robots.txt
+# Democratizing free quality education for all
+
+User-agent: *
 Allow: /
 
-User-agent: Bingbot
-Allow: /
+# Disallow admin or private areas (add when needed)
+# Disallow: /admin/
+# Disallow: /private/
 
+# Allow social media crawlers
 User-agent: Twitterbot
 Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+User-agent: LinkedInBot
 Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# Search Engine Specific Rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Sitemap Location
+Sitemap: https://learnforfree.vercel.app/sitemap.xml
+
+# Host (primary domain)
+Host: https://learnforfree.vercel.app

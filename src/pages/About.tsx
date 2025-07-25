@@ -1,11 +1,39 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Heart, Target, Users, Award, CheckCircle, Zap, Shield, Github, Linkedin, Globe, BookOpen, User, Twitter } from "lucide-react";
 import profilePic from "@/assets/profile-pic.png";
 
 const About = () => {
+  const aboutStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About LearnForFree",
+    "description": "Learn about LearnForFree's mission to democratize access to quality education through curated free learning resources.",
+    "url": "https://learnforfree.vercel.app/about",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "LearnForFree",
+      "description": "Democratizing access to quality education by curating the best free learning resources",
+      "url": "https://learnforfree.vercel.app",
+      "foundingDate": "2024",
+      "mission": "To democratize access to quality education and empower learners worldwide",
+      "sameAs": [
+        "https://github.com/learnforfree",
+        "https://twitter.com/learnforfree"
+      ]
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="About LearnForFree - Our Mission to Democratize Quality Education"
+        description="Learn about LearnForFree's mission to democratize access to quality education through 500+ curated free learning resources, development tools, and courses for students, developers, and lifelong learners."
+        keywords="about learnforfree, free education mission, democratize education, quality learning resources, educational platform, free learning tools, education for all, learning accessibility"
+        url="https://learnforfree.vercel.app/about"
+        structuredData={aboutStructuredData}
+      />
       <Header />
       
       <main>

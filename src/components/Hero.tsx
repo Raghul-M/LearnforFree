@@ -9,9 +9,11 @@ const Hero = () => {
           {/* Content */}
           <div className="space-y-10 animate-slide-up">
             <div className="space-y-6">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl heading-modern text-foreground leading-[1.1] text-balance">
-                Learn Amazing Things{" "}
-                <span className="text-gradient">For Free</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl heading-modern text-foreground leading-[1.2] text-balance">
+                Democratizing{" "}
+                <span className="text-primary font-bold">free quality education</span>
+                <br />
+                <span className="text-primary font-bold">for all</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-xl text-balance">
                 Discover verified, high-quality educational resources curated for students, 
