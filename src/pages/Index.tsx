@@ -60,15 +60,15 @@ const Index = () => {
       description: "Cloud development environment that runs in your browser with VS Code",
       url: "https://github.com/features/codespaces",
       logo: githubLogo,
-      category: "developers",
-      pricing: "FREE + PREMIUM" as const
+      categories: ["developers", "students", "tools"],
+      pricing: "FREE" as const
     },
     {
       name: "NotebookLM",
       description: "AI-powered research assistant that helps you understand and work with documents",
       url: "https://notebooklm.google.com",
       logo: notebookllmLogo,
-      category: "students",
+      categories: ["students", "tools"],
       pricing: "FREE" as const
     },
     {
@@ -76,15 +76,15 @@ const Index = () => {
       description: "Free Jupyter notebook environment that runs in the cloud with GPU support",
       url: "https://colab.research.google.com",
       logo: googleCollabLogo,
-      category: "developers",
-      pricing: "FREE + PREMIUM" as const
+      categories: ["developers", "students", "tools"],
+      pricing: "FREE" as const
     },
     {
       name: "Y Combinator",
       description: "Startup accelerator and entrepreneurship resources for building successful companies",
-      url: "https://www.ycombinator.com",
+      url: "https://www.startupschool.org/dashboard",
       logo: ycombinatorLogo,
-      category: "entrepreneurship",
+      categories: ["entrepreneurship"],
       pricing: "FREE" as const
     },
     {
@@ -92,7 +92,7 @@ const Index = () => {
       description: "Harvard's introduction to computer science and programming course, completely free",
       url: "https://cs50.harvard.edu",
       logo: cs50Logo,
-      category: "students",
+      categories: ["students"],
       pricing: "FREE" as const
     },
         {
@@ -100,7 +100,7 @@ const Index = () => {
       description: "Free developer tools and resources for students including premium services",
       url: "https://education.github.com/pack",
       logo: developerPackLogo,
-      category: "students",
+      categories: ["students", "developers", "tools"],
       pricing: "FREE" as const
     },
     {
@@ -108,7 +108,7 @@ const Index = () => {
       description: "AI-powered assistant to help students with research, writing, and learning",
       url: "https://gemini.google.com/app",
       logo: geminiLogo,
-      category: "students",
+      categories: ["students", "tools"],
       pricing: "FREE" as const
     },
     {
@@ -116,7 +116,7 @@ const Index = () => {
       description: "Learn to code for free with interactive coding challenges and projects",
       url: "https://www.freecodecamp.org",
       logo: freecodecampLogo,
-      category: "developers",
+      categories: ["developers"],
       pricing: "FREE" as const
     }
     ];
@@ -128,7 +128,7 @@ const Index = () => {
       description: "Open-source machine learning platform with courses, models, and datasets for AI education",
       url: "https://huggingface.co/learn",
       logo: huggingfaceLogo,
-      category: "students",
+      categories: ["students", "developers", "tools"],
       pricing: "FREE" as const
     },
     {
@@ -136,26 +136,33 @@ const Index = () => {
       description: "Learn AI and machine learning from Andrew Ng with hands-on courses and specializations",
       url: "https://www.deeplearning.ai",
       logo: deeplearningaiLogo,
-      category: "students",
-      pricing: "FREE + PREMIUM" as const
+      categories: ["students", "developers", "tools"],
+      pricing: "FREE" as const
     },
     {
       name: "Roadmap.sh",
       description: "Interactive roadmaps and learning paths for developers with step-by-step guides",
       url: "https://roadmap.sh",
       logo: roadmapshLogo,
-      category: "developers",
+      categories: ["developers", "tools"],
       pricing: "FREE" as const
     }
   ];
 
-  // Combine main tools with additional tools if "Load More" is active
-  const allTools = showMoreResources ? [...tools, ...additionalTools] : tools;
+  // Combine all tools (main + additional)
+  const allTools = [...tools, ...additionalTools];
 
   // Filter tools based on active category
-  const filteredTools = activeCategory === "all" 
+  const categoryFilteredTools = activeCategory === "all" 
     ? allTools 
-    : allTools.filter(tool => tool.category === activeCategory);
+    : allTools.filter(tool => tool.categories.includes(activeCategory));
+
+  // Limit tools display - show only 4 initially for specific categories, all for "all" category
+  const filteredTools = activeCategory === "all" 
+    ? categoryFilteredTools 
+    : showMoreResources 
+      ? categoryFilteredTools 
+      : categoryFilteredTools.slice(0, 4);
 
   return (
     <div className="min-h-screen bg-[var(--gradient-surface)]">
@@ -195,19 +202,19 @@ const Index = () => {
             </div>
 
             {/* Load More Resources Button */}
-            {!showMoreResources && (
+            {!showMoreResources && activeCategory !== "all" && categoryFilteredTools.length > 4 && (
               <div className="text-center mt-12">
                 <button 
                   onClick={() => setShowMoreResources(true)}
                   className="btn-primary px-8 py-4 text-lg"
                 >
-                  Load More Resources
+                  Load More Resources ({categoryFilteredTools.length - 4} more)
                 </button>
               </div>
             )}
 
             {/* Show Less Button */}
-            {showMoreResources && (
+            {showMoreResources && activeCategory !== "all" && categoryFilteredTools.length > 4 && (
               <div className="text-center mt-12">
                 <button 
                   onClick={() => setShowMoreResources(false)}
@@ -219,7 +226,7 @@ const Index = () => {
             )}
 
             {/* No results */}
-            {filteredTools.length === 0 && (
+            {categoryFilteredTools.length === 0 && (
               <div className="text-center py-20">
                 <div className="glass-effect rounded-3xl p-12 max-w-md mx-auto">
                   <div className="text-6xl mb-4">🔍</div>

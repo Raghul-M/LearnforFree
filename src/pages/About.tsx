@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
-import { Heart, Target, Users, Award, CheckCircle, Zap, Shield, Github, Linkedin, Globe, BookOpen, User, Twitter } from "lucide-react";
+import { Heart, Target, Users, Award, CheckCircle, Zap, Shield, Github, Linkedin, Globe, BookOpen, User, Twitter, Instagram } from "lucide-react";
 import profilePic from "@/assets/profile-pic.png";
 
 const About = () => {
@@ -55,30 +55,33 @@ const About = () => {
               {/* Content - Right */}
               <div className="order-1 lg:order-2 text-center lg:text-left space-y-8 animate-slide-up">
                 <h1 className="heading-display text-5xl md:text-6xl lg:text-7xl text-foreground mb-8">
-                  About
+                  Meet the creator
                 </h1>
                 <div className="space-y-6">
-                                      <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                      Democratizing access to quality education by curating the best free learning resources. 
-                      <span className="text-primary font-semibold"> Building the future of accessible learning.</span>
-                    </p>
+                  <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                    Hi, I'm <span className="text-primary font-semibold">Raghul</span>, and I believe that everyone deserves access to quality education, 
+                    regardless of their financial situation.
+                  </p>
                   <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                    Our platform carefully curates premium educational content from top universities, leading technology companies, 
-                    and expert educators. From Harvard's CS50 to Google's developer tools, we bring together the best free 
-                                          educational opportunities in one accessible location. Join our growing community of over 
-                      <span className="text-primary font-semibold"> 50,000+ active learners</span> who are advancing their careers 
-                    and building new skills—all completely free.
+                    As a self-taught developer, I know firsthand how challenging it can be to find reliable, high-quality learning resources. 
+                    I spent countless hours searching through scattered content, trying to separate the gems from the noise. 
+                    That's when I realized there had to be a better way.
+                  </p>
+                  <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                    LearnforFree was born from my passion to help others avoid the same struggles I faced. 
+                    <span className="text-primary font-semibold"> Every resource here is personally vetted</span> because I believe 
+                    your time is valuable, and you deserve the best learning experience possible.
                   </p>
                 </div>
                 <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-8">
                   <div className="glass-effect px-6 py-3 rounded-full">
-                    <span className="text-foreground font-semibold"><span className="text-primary">●</span> Global Community</span>
+                    <span className="text-foreground font-semibold"><span className="text-primary">●</span> Mission-Driven</span>
                   </div>
                   <div className="glass-effect px-6 py-3 rounded-full">
-                    <span className="text-foreground font-semibold"><span className="text-primary">■</span> 1000+ Resources</span>
+                    <span className="text-foreground font-semibold"><span className="text-primary">●</span> Self-Taught Journey</span>
                   </div>
                   <div className="glass-effect px-6 py-3 rounded-full">
-                    <span className="text-foreground font-semibold"><span className="text-primary">◆</span> 100% Free</span>
+                    <span className="text-foreground font-semibold"><span className="text-primary">●</span> Community First</span>
                   </div>
                 </div>
               </div>
@@ -139,20 +142,20 @@ const About = () => {
               </a>
 
               <a 
-                href="https://website.com" 
+                href="https://www.instagram.com/raghul.in/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="glass-card group text-center animate-fade-in hover:scale-105 transition-[var(--transition-smooth)] p-4"
               >
                 <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 mx-auto mb-3 group-hover:scale-110 transition-[var(--transition-smooth)]">
-                  <Globe className="text-primary" size={24} />
+                  <Instagram className="text-primary" size={24} />
                 </div>
-                <h3 className="heading-modern text-base text-foreground mb-1">Website</h3>
-                <p className="text-xs text-muted-foreground">Portfolio</p>
+                <h3 className="heading-modern text-base text-foreground mb-1">Instagram</h3>
+                <p className="text-xs text-muted-foreground">Visual Journey</p>
               </a>
 
               <a 
-                href="https://blog.com" 
+                href="https://blog.raghul.in/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="glass-card group text-center animate-fade-in hover:scale-105 transition-[var(--transition-smooth)] p-4"
@@ -165,7 +168,7 @@ const About = () => {
               </a>
 
               <a 
-                href="https://topmate.io" 
+                href="https://topmate.io/m_raghul/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="glass-card group text-center animate-fade-in hover:scale-105 transition-[var(--transition-smooth)] p-4"

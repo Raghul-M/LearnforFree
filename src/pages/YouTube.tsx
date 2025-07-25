@@ -39,7 +39,7 @@ const YouTube = () => {
     // Web Development
     {
       name: "Hitesh Choudhary",
-      description: "Complete web development courses in Hindi",
+      description: "Complete web development courses and tutorials",
       url: "https://www.youtube.com/@hiteshchoudharydotcom",
       thumbnail: "/youtube-logos/hitesh-choudhary.png",
       category: "developers",
@@ -579,14 +579,15 @@ const YouTube = () => {
           </div>
         </section>
 
-        {/* Featured Channels */}
-        <section className="py-16 px-6">
+        {/* Category Filter */}
+        <section className="py-20 px-6 bg-[var(--gradient-surface)]">
           <div className="container mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 flex items-center justify-center gap-3">
-                <Bookmark className="text-yellow-500 fill-yellow-500" />
-                Featured Channels
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Browse by Category
               </h2>
+              
+              {/* Quality Content Description */}
               <p className="text-lg text-muted-foreground mb-6">
                 Our top picks for exceptional educational content
               </p>
@@ -597,61 +598,6 @@ const YouTube = () => {
                 <span>✨ Personally Verified & Handpicked for Quality</span>
                 <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
               </div>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              {featuredChannels.map((channel, index) => (
-                <div key={index} className="tool-card-new group relative">
-                  <div className="relative">
-                    <img
-                      src={channel.thumbnail}
-                      alt={channel.name}
-                      className="w-16 h-16 rounded-full mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
-                    />
-                    <div className="absolute -top-2 -right-2 bg-yellow-500 text-black rounded-full p-1">
-                      <Bookmark size={16} fill="currentColor" />
-                    </div>
-                  </div>
-                  <h3 className="font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                    {channel.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-3 line-clamp-2">
-                    {channel.description}
-                  </p>
-                  <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
-                    <div className="flex items-center gap-1">
-                      <Users size={12} />
-                      <span>{channel.subscribers}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Star size={12} className="text-yellow-500 fill-current" />
-                      <span>{channel.rating}</span>
-                    </div>
-                  </div>
-                  <a
-                    href={channel.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-tool w-full flex items-center justify-center gap-1 no-underline"
-                  >
-                    <Play size={12} />
-                    <span className="text-xs">Watch</span>
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Category Filter */}
-        <section className="py-20 px-6 bg-[var(--gradient-surface)]">
-          <div className="container mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Browse by Category
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Find channels that match your learning goals
-              </p>
             </div>
 
             {/* Category Tabs */}
@@ -738,7 +684,7 @@ const YouTube = () => {
             {/* Channels Grid */}
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
               {filteredChannels.map((channel, index) => (
-                <div key={index} className="tool-card-new group">
+                <div key={index} className="tool-card-new group flex flex-col h-full">
                   <div className="relative mb-4">
                     <img
                       src={channel.thumbnail}
@@ -749,24 +695,14 @@ const YouTube = () => {
                   <h3 className="font-semibold text-foreground mb-2 text-center group-hover:text-primary transition-colors text-sm">
                     {channel.name}
                   </h3>
-                  <p className="text-xs text-muted-foreground mb-3 line-clamp-2 text-center">
+                  <p className="text-xs text-muted-foreground mb-4 line-clamp-2 text-center flex-grow">
                     {channel.description}
                   </p>
-                  <div className="flex items-center justify-center gap-3 text-xs text-muted-foreground mb-4">
-                    <div className="flex items-center gap-1">
-                      <Users size={10} />
-                      <span>{channel.subscribers}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Star size={10} className="text-yellow-500 fill-current" />
-                      <span>{channel.rating}</span>
-                    </div>
-                  </div>
                   <a
                     href={channel.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-tool w-full flex items-center justify-center gap-1 no-underline"
+                    className="btn-tool w-full flex items-center justify-center gap-1 no-underline mt-auto"
                   >
                     <Play size={12} />
                     <span className="text-xs">Watch</span>

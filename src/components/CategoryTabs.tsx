@@ -10,7 +10,7 @@ const categories = [
   { id: "students", label: "Students", description: "Academic resources & scholarships" },
   { id: "entrepreneurship", label: "Entrepreneurship", description: "Business & startup resources" },
   { id: "developers", label: "Developers", description: "Coding & technical resources" },
-  { id: "soft-skills", label: "Soft Skills", description: "Communication & leadership" },
+  { id: "tools", label: "Tools", description: "Essential development & productivity tools" },
 ];
 
 const CategoryTabs: React.FC<CategoryTabsProps> = ({ activeCategory, onCategoryChange }) => {

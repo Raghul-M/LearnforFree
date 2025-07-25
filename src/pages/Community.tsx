@@ -30,7 +30,7 @@ const Community = () => {
                   Join WhatsApp Community
                 </a>
                 <a 
-                  href="https://github.com/Raghul-M" 
+                  href="https://github.com/Raghul-M/LearnforFree-Contributions" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="btn-secondary flex items-center justify-center gap-2 no-underline"
@@ -113,55 +113,64 @@ const Community = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-              <div className="bg-card border border-border rounded-lg p-8 text-center space-y-4 hover:shadow-[var(--shadow-medium)] transition-[var(--transition-smooth)]">
-                <div className="w-16 h-16 bg-[#333] rounded-full flex items-center justify-center mx-auto">
+              <div className="bg-card border border-border rounded-lg p-8 text-center flex flex-col h-full hover:shadow-[var(--shadow-medium)] transition-[var(--transition-smooth)]">
+                <div className="w-16 h-16 bg-[#333] rounded-full flex items-center justify-center mx-auto mb-4">
                   <Github className="text-white" size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-foreground">GitHub</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-xl font-bold text-foreground mb-4">GitHub</h3>
+                <p className="text-muted-foreground mb-4 flex-grow">
                   Contribute to our open-source project, report issues, or suggest new features.
                 </p>
-                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-4">
                   <span>⭐ 1,200+ stars</span>
                 </div>
-                <button className="btn-secondary w-full">
+                <a 
+                  href="https://github.com/Raghul-M/LearnforFree-Contributions" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn-primary w-full block text-center no-underline mt-auto"
+                >
                   View Repository
-                </button>
+                </a>
               </div>
 
-              <div className="bg-card border border-border rounded-lg p-8 text-center space-y-4 hover:shadow-[var(--shadow-medium)] transition-[var(--transition-smooth)]">
-                <div className="w-16 h-16 bg-[#1DA1F2] rounded-full flex items-center justify-center mx-auto">
+              <div className="bg-card border border-border rounded-lg p-8 text-center flex flex-col h-full hover:shadow-[var(--shadow-medium)] transition-[var(--transition-smooth)]">
+                <div className="w-16 h-16 bg-[#1DA1F2] rounded-full flex items-center justify-center mx-auto mb-4">
                   <Twitter className="text-white" size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-foreground">Twitter</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-xl font-bold text-foreground mb-4">Twitter</h3>
+                <p className="text-muted-foreground mb-4 flex-grow">
                   Follow us for updates, learning tips, and featured resources from our community.
                 </p>
-                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                  <span>📈 2,500+ followers</span>
+                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-4">
+                  <span>🐦 2,500+ followers</span>
                 </div>
-                <button className="btn-secondary w-full">
+                <a 
+                  href="https://x.com/RaghulM01" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn-primary w-full block text-center no-underline mt-auto"
+                >
                   Follow Us
-                </button>
+                </a>
               </div>
 
-              <div className="bg-card border border-border rounded-lg p-8 text-center space-y-4 hover:shadow-[var(--shadow-medium)] transition-[var(--transition-smooth)]">
-                <div className="w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center mx-auto">
+              <div className="bg-card border border-border rounded-lg p-8 text-center flex flex-col h-full hover:shadow-[var(--shadow-medium)] transition-[var(--transition-smooth)]">
+                <div className="w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center mx-auto mb-4">
                   <Phone className="text-white" size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-foreground">WhatsApp Community</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-xl font-bold text-foreground mb-4">WhatsApp Community</h3>
+                <p className="text-muted-foreground mb-4 flex-grow">
                   Join our WhatsApp community for instant updates, quick help, and mobile-friendly discussions.
                 </p>
-                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                  <Users size={16} />
-                  <span>Active community</span>
+                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-4">
+                  <span>💬 Active community</span>
                 </div>
                 <a 
                   href="https://chat.whatsapp.com/E3wsUd8dY4d7ppDDFZfVr7?mode=r_c" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="btn-primary w-full block text-center no-underline"
+                  className="btn-primary w-full block text-center no-underline mt-auto"
                 >
                   Join WhatsApp
                 </a>

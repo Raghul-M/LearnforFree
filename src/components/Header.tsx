@@ -80,18 +80,18 @@ const Header = () => {
               YouTube
             </Link>
             <Link 
-              to="/about" 
-              onClick={scrollToTop}
-              className="text-foreground hover:text-primary transition-[var(--transition-fast)] font-medium text-sm tracking-wide uppercase opacity-80 hover:opacity-100 px-4 py-2 rounded-lg hover:bg-accent/30"
-            >
-              About
-            </Link>
-            <Link 
               to="/community" 
               onClick={scrollToTop}
               className="text-foreground hover:text-primary transition-[var(--transition-fast)] font-medium text-sm tracking-wide uppercase opacity-80 hover:opacity-100 px-4 py-2 rounded-lg hover:bg-accent/30"
             >
               Community
+            </Link>
+            <Link 
+              to="/about" 
+              onClick={scrollToTop}
+              className="text-foreground hover:text-primary transition-[var(--transition-fast)] font-medium text-sm tracking-wide uppercase opacity-80 hover:opacity-100 px-4 py-2 rounded-lg hover:bg-accent/30"
+            >
+              About
             </Link>
           </nav>
 
@@ -179,18 +179,18 @@ const Header = () => {
                     YouTube
                   </Link>
                   <Link 
-                    to="/about" 
-                    onClick={() => { toggleMobileMenu(); scrollToTop(); }}
-                    className="block text-foreground hover:text-primary transition-[var(--transition-fast)] font-medium text-lg tracking-wide px-4 py-3 rounded-lg hover:bg-accent/30"
-                  >
-                    About
-                  </Link>
-                  <Link 
                     to="/community" 
                     onClick={() => { toggleMobileMenu(); scrollToTop(); }}
                     className="block text-foreground hover:text-primary transition-[var(--transition-fast)] font-medium text-lg tracking-wide px-4 py-3 rounded-lg hover:bg-accent/30"
                   >
                     Community
+                  </Link>
+                  <Link 
+                    to="/about" 
+                    onClick={() => { toggleMobileMenu(); scrollToTop(); }}
+                    className="block text-foreground hover:text-primary transition-[var(--transition-fast)] font-medium text-lg tracking-wide px-4 py-3 rounded-lg hover:bg-accent/30"
+                  >
+                    About
                   </Link>
                 </nav>
 

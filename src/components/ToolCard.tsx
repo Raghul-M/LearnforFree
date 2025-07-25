@@ -7,7 +7,7 @@ interface ToolCardProps {
   description: string;
   url: string;
   logo: string;
-  category: string;
+  categories: string[];
   pricing?: "FREE" | "FREE + PREMIUM";
 }
 
@@ -16,7 +16,7 @@ const ToolCard: React.FC<ToolCardProps> = ({
   description,
   url,
   logo,
-  category,
+  categories,
   pricing = "FREE"
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -74,7 +74,7 @@ const ToolCard: React.FC<ToolCardProps> = ({
           key={`modal-${name}`}
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
-          tool={{ name, description, url, logo, category, pricing }}
+          tool={{ name, description, url, logo, categories, pricing }}
         />
       )}
     </div>

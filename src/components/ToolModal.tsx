@@ -10,7 +10,7 @@ interface ToolModalProps {
     description: string;
     url: string;
     logo: string;
-    category: string;
+    categories: string[];
     pricing?: "FREE" | "FREE + PREMIUM";
   };
 }

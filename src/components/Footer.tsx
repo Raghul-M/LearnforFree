@@ -73,11 +73,6 @@ const Footer = () => {
                   Community
                 </Link>
               </li>
-              <li>
-                <Link to="/#tools" onClick={scrollToTop} className="text-gray-400 hover:text-primary transition-colors">
-                  Tools
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -113,7 +108,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © 2024 Learnforfree. All rights reserved.
+              © 2025 Learnforfree. All rights reserved.
             </p>
             <div className="flex items-center gap-2 text-gray-400 text-sm">
               <span>Made with</span>
