@@ -3,11 +3,11 @@ import { BookOpen, Users, Award } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="hero-gradient py-24 px-6 min-h-[85vh] flex items-center">
+    <section className="hero-gradient py-12 md:py-24 px-6 min-h-[80vh] md:min-h-[85vh] flex items-center">
       <div className="container mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Content */}
-          <div className="space-y-10 animate-slide-up">
+          <div className="space-y-6 md:space-y-10 animate-slide-up">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl heading-modern text-foreground leading-[1.2] text-balance">
                 Democratizing{" "}
@@ -22,7 +22,7 @@ const Hero = () => {
             </div>
 
             {/* Enhanced Stats */}
-            <div className="grid grid-cols-3 gap-4 sm:gap-6 md:gap-8 pt-8">
+            <div className="grid grid-cols-3 gap-3 sm:gap-6 md:gap-8 pt-6 md:pt-8">
               <div className="text-center group">
                 <div className="glass-effect rounded-2xl p-4 sm:p-6 md:p-8 lg:p-10 mb-4 group-hover:scale-105 transition-[var(--transition-smooth)]">
                   <div className="py-2 sm:py-3 md:py-4">
@@ -54,12 +54,12 @@ const Hero = () => {
           </div>
 
           {/* Hero Image */}
-          <div className="relative animate-fade-in">
-            <div className="relative overflow-hidden rounded-[2rem] shadow-[var(--shadow-xl)]">
+          <div className="relative animate-fade-in mt-8 lg:mt-0">
+            <div className="relative overflow-hidden rounded-[1.5rem] md:rounded-[2rem] shadow-[var(--shadow-xl)]">
               <img
                 src={heroImage}
                 alt="Social media and community learning illustration"
-                className="w-full h-auto object-contain transform hover:scale-105 transition-[var(--transition-slow)]"
+                className="w-full h-auto object-contain transform hover:scale-105 transition-[var(--transition-slow)] max-w-none"
               />
               {/* Modern overlay */}
               <div className="absolute inset-0 bg-[var(--gradient-primary)] opacity-5"></div>

@@ -99,7 +99,6 @@ const Header = () => {
           <div className="md:hidden">
             <button 
               onClick={handleMobileMenuToggle}
-              onTouchStart={handleMobileMenuToggle}
               className="mobile-menu-button text-foreground hover:text-primary transition-[var(--transition-fast)] p-4 rounded-full hover:bg-accent/50 relative z-[60] min-w-[48px] min-h-[48px] flex items-center justify-center touch-manipulation"
               aria-label="Toggle mobile menu"
               type="button"
