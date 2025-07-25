@@ -38,12 +38,12 @@ const About = () => {
       
       <main>
         {/* Hero Section */}
-        <section className="hero-gradient py-20 px-4 relative overflow-hidden">
+        <section className="hero-gradient py-12 md:py-20 px-4 relative overflow-hidden">
           <div className="container mx-auto relative z-10">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
               {/* Profile Picture - Left */}
               <div className="order-2 lg:order-1 animate-fade-in">
-                <div className="bg-white rounded-full shadow-lg border border-gray-200 aspect-square w-96 h-96 mx-auto overflow-hidden">
+                <div className="bg-white rounded-full shadow-lg border border-gray-200 aspect-square w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto overflow-hidden">
                   <img 
                     src={profilePic} 
                     alt="Profile" 
@@ -53,35 +53,35 @@ const About = () => {
               </div>
 
               {/* Content - Right */}
-              <div className="order-1 lg:order-2 text-center lg:text-left space-y-8 animate-slide-up">
-                <h1 className="heading-display text-5xl md:text-6xl lg:text-7xl text-foreground mb-8">
+              <div className="order-1 lg:order-2 text-center lg:text-left space-y-4 md:space-y-8 animate-slide-up">
+                <h1 className="heading-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-foreground mb-4 md:mb-8">
                   Meet the creator
                 </h1>
-                <div className="space-y-6">
-                  <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                <div className="space-y-4 md:space-y-6">
+                  <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed">
                     Hi, I'm <span className="text-primary font-semibold">Raghul</span>, and I believe that everyone deserves access to quality education, 
                     regardless of their financial situation.
                   </p>
-                  <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                  <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
                     As a self-taught developer, I know firsthand how challenging it can be to find reliable, high-quality learning resources. 
                     I spent countless hours searching through scattered content, trying to separate the gems from the noise. 
                     That's when I realized there had to be a better way.
                   </p>
-                  <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                  <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
                     LearnforFree was born from my passion to help others avoid the same struggles I faced. 
                     <span className="text-primary font-semibold"> Every resource here is personally vetted</span> because I believe 
                     your time is valuable, and you deserve the best learning experience possible.
                   </p>
                 </div>
-                <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-8">
-                  <div className="glass-effect px-6 py-3 rounded-full">
-                    <span className="text-foreground font-semibold"><span className="text-primary">●</span> Mission-Driven</span>
+                <div className="flex flex-wrap justify-center lg:justify-start gap-2 md:gap-4 pt-4 md:pt-8">
+                  <div className="glass-effect px-3 md:px-6 py-2 md:py-3 rounded-full">
+                    <span className="text-sm md:text-base text-foreground font-semibold"><span className="text-primary">●</span> Mission-Driven</span>
                   </div>
-                  <div className="glass-effect px-6 py-3 rounded-full">
-                    <span className="text-foreground font-semibold"><span className="text-primary">●</span> Self-Taught Journey</span>
+                  <div className="glass-effect px-3 md:px-6 py-2 md:py-3 rounded-full">
+                    <span className="text-sm md:text-base text-foreground font-semibold"><span className="text-primary">●</span> Self-Taught Journey</span>
                   </div>
-                  <div className="glass-effect px-6 py-3 rounded-full">
-                    <span className="text-foreground font-semibold"><span className="text-primary">●</span> Community First</span>
+                  <div className="glass-effect px-3 md:px-6 py-2 md:py-3 rounded-full">
+                    <span className="text-sm md:text-base text-foreground font-semibold"><span className="text-primary">●</span> Community First</span>
                   </div>
                 </div>
               </div>
