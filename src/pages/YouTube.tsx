@@ -119,6 +119,16 @@ const YouTube = () => {
       subscribers: "95K",
       rating: 4.6
     },
+    {
+      name: "Kubesimplify",
+      description: "Kubernetes and cloud-native technologies simplified",
+      url: "https://www.youtube.com/@kubesimplify",
+      thumbnail: "/youtube-logos/kubesimplifyyt.png",
+      category: "developers",
+      subcategory: "cloud-devops",
+      subscribers: "75K",
+      rating: 4.7
+    },
 
     // AI/ML/Data Science
     {
